@@ -1,32 +1,9 @@
 {
   "version": 2,
-
-  "installCommand": "npm ci",
-
-  "buildCommand": "npm run build --workspace=shared && npm run vercel-build --workspace=frontend",
+  "buildCommand": "cd frontend && npm install && npm run build",
   "outputDirectory": "frontend/dist",
-
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/index" },
-    { "source": "/(.*)",     "destination": "/index.html" }
-  ],
-
-  "env": {
-    "NODE_ENV": "production"
-  },
-
-  "headers": [
-    {
-      "source": "/api/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "no-store" }
-      ]
-    },
-    {
-      "source": "/assets/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-      ]
-    }
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
