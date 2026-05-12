@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--
+    Design reference for the magic-link email.
+    The live version is built by buildMagicLinkEmailHtml() in src/auth/magicLink.ts.
+    Placeholders replaced at send time: {{EMAIL}}, {{MAGIC_LINK}}
+  -->
+  <title>Login to Bank Statement OCR</title>
+</head>
+<body style="margin:0;padding:0;background-color:#f3f4f6;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;">
+
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
+         style="background-color:#f3f4f6;padding:48px 20px;">
+    <tr>
+      <td align="center">
+
+        <!-- ── Card ─────────────────────────────────────────────────────── -->
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
+               style="max-width:560px;background-color:#ffffff;border-radius:12px;
+                      box-shadow:0 1px 3px rgba(0,0,0,0.10),0 1px 2px rgba(0,0,0,0.06);">
+
+          <!-- Header -->
+          <tr>
+            <td style="background-color:#1d4ed8;border-radius:12px 12px 0 0;padding:32px 40px;text-align:center;">
+              <p style="margin:0;color:#bfdbfe;font-size:11px;font-weight:700;
+                        letter-spacing:0.12em;text-transform:uppercase;">Bank Statement OCR</p>
+              <h1 style="margin:10px 0 0;color:#ffffff;font-size:22px;
+                         font-weight:700;line-height:1.35;">Your Login Link</h1>
+            </td>
+          </tr>
+
+          <!-- Body -->
+          <tr>
+            <td style="padding:40px 40px 32px;">
+
+              <p style="margin:0 0 20px;color:#374151;font-size:15px;line-height:1.65;">Hi there,</p>
+              <p style="margin:0 0 28px;color:#374151;font-size:15px;line-height:1.65;">
+                We received a request to sign in to your account using
+                <strong>{{EMAIL}}</strong>. Click the button below — the link
+                is valid for <strong>15&nbsp;minutes</strong>.
+              </p>
+
+              <!-- CTA button -->
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0"
+                     style="margin:0 0 32px;">
+                <tr>
+                  <td style="border-radius:8px;background-color:#1d4ed8;">
+                    <a href="{{MAGIC_LINK}}"
+                       target="_blank"
+                       style="display:inline-block;padding:14px 36px;color:#ffffff;
+                              font-size:15px;font-weight:600;text-decoration:none;
+                              border-radius:8px;line-height:1;">
+                      Log In to Your Account &rarr;
+                    </a>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Fallback URL -->
+              <p style="margin:0 0 6px;color:#6b7280;font-size:12px;line-height:1.5;">
+                Button not working? Paste this link into your browser:
+              </p>
+              <p style="margin:0 0 32px;word-break:break-all;">
+                <a href="{{MAGIC_LINK}}"
+                   style="color:#2563eb;font-size:12px;text-decoration:underline;">{{MAGIC_LINK}}</a>
+              </p>
+
+              <!-- Divider -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
+                     style="margin-bottom:24px;">
+                <tr><td style="border-top:1px solid #e5e7eb;"></td></tr>
+              </table>
+
+              <!-- Security notice -->
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0"
+                     style="width:100%;background-color:#fffbeb;border-radius:8px;
+                            border:1px solid #fde68a;">
+                <tr>
+                  <td style="padding:14px 18px;">
+                    <p style="margin:0;color:#92400e;font-size:12px;line-height:1.6;">
+                      <strong>Security notice:</strong> This link expires in 15&nbsp;minutes
+                      and can only be used once. If you didn't request this email, you can
+                      safely ignore it — your account is not at risk.
+                    </p>
+                  </td>
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="background-color:#f9fafb;border-top:1px solid #e5e7eb;
+                       border-radius:0 0 12px 12px;padding:22px 40px;">
+              <p style="margin:0;color:#9ca3af;font-size:11px;line-height:1.6;text-align:center;">
+                Sent to <strong>{{EMAIL}}</strong> &bull;
+                Bank Statement OCR &bull; Secure document processing
+              </p>
+            </td>
+          </tr>
+
+        </table>
+        <!-- /Card -->
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
