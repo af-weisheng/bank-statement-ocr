@@ -8,9 +8,7 @@
 
   "functions": {
     "api/*.ts": {
-      "runtime": "vercel-node",
-      "maxDuration": 60,
-      "memory": 1024
+      "runtime": "nodejs20.x"
     }
   },
 
