@@ -6,12 +6,6 @@
   "buildCommand": "npm run build --workspace=shared && npm run vercel-build --workspace=frontend",
   "outputDirectory": "frontend/dist",
 
-  "functions": {
-    "api/*.ts": {
-      "runtime": "nodejs20.x"
-    }
-  },
-
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/index" },
     { "source": "/(.*)",     "destination": "/index.html" }
