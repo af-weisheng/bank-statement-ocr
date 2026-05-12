@@ -11,7 +11,7 @@
  * by `vercel dev` during local development (reads .env from the project root).
  * Do NOT call dotenv.config() here; it conflicts with Vercel's env var injection
  * and would run too late to be seen by eagerly-evaluated modules like
- * src/database/connection.ts.
+ * backend/src/database/connection.ts.
  *
  * ── Operational notes ────────────────────────────────────────────────────────
  *
@@ -34,7 +34,7 @@
  *   approach this limit on cold starts. Consider bumping to 300 s (Pro plan)
  *   if you expect heavy scanned-PDF workloads.
  */
-import { createApp } from '../src/app';
+import { createApp } from '../backend/src/app';
 
 const app = createApp();
 

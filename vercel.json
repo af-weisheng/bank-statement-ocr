@@ -7,14 +7,15 @@
   "outputDirectory": "frontend/dist",
 
   "functions": {
-    "backend/api/index.ts": {
+    "api/*.ts": {
+      "runtime": "@vercel/node@3",
       "maxDuration": 60,
       "memory": 1024
     }
   },
 
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/backend/api/index" },
+    { "source": "/api/(.*)", "destination": "/api/index" },
     { "source": "/(.*)",     "destination": "/index.html" }
   ],
 
